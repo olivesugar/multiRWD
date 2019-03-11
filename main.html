@@ -9,7 +9,22 @@
 </head>
 <body>
   <div class="container">
-    <header class="header">헤더</header>
+    <header class="header">
+      <h1 class="logo"><a href="#"><img src="images/rwd-logo.png" alt="Web Cafe"></a></h1>
+      <ul class="member">
+      	<li><a href="#">로그인</a></li>
+      	<li><a href="#">회원가입</a></li>
+      	<li><a href="#">커뮤니티</a></li>
+      </ul>
+      <form action="https://formspree.io/olive_sugar@naver.com" method="POST" class="search">
+      <fieldset>
+        <legend>검색 폼</legend>
+        <label class="readable-hidden" for="search">검색어</label><input type="text" id="search">
+        <button class="btn-search" type="submit">검색</button>
+      </fieldset>
+      </form>
+
+    </header>
     <nav class="navigation">내비게이션</nav>
     <main class="main">
       <section class="book">추천서적</section>
