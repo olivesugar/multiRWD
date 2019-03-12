@@ -1,3 +1,6 @@
+$(window).resize(function(){
+    location.reload();
+});
 var viewport = matchMedia('(max-width:999px)');
 
 if(viewport.matches){
@@ -24,7 +27,7 @@ if(viewport.matches){
        }
     });
 
-    // 메뉴 항목 선택 시 하위 메뉴 제어
+// 메뉴 항목 선택 시 하위 메뉴 제어
     items.on('click keyup', function(e){
         e.preventDefault();
         if(e.type === 'click' || (e.type === 'keyup' && e.keyCode === 13)){
@@ -37,7 +40,7 @@ if(viewport.matches){
         }
     });
 
-    // 키보드가 포커스 지나가면 메뉴 감추기
+// 키보드가 포커스 지나가면 메뉴 감추기
     menu.on('focusout', function(){
         nav.removeClass('menu-act');
     });
