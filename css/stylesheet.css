@@ -17,10 +17,13 @@ legend, .readable-hidden {
   clip: rect(0 0 0 0);
   margin: -1px;
 }
-
+/* 링크 스타일 */
+a {
+  text-decoration: none;
+  color: inherit;
+}
 /* 콘텐츠 영역별 배경색*/
 .header {
-  background: yellow;
 }
 .navigation {
   background: lime;
@@ -49,17 +52,19 @@ legend, .readable-hidden {
 .footer {
   background: purple;
 }
-
+/* 반응형 컨텐츠 */
+.rwd {
+  max-width: 100%;
+  height: auto;
+}
 /* 기본스타일 */
-body{
+body {
   color: #181818;
   background: #fff;
   font-family: "Noto Sans Regular";
   line-height:1.5;
   font-size: 1.4rem;
 }
-
-
 /* 모바일 스타일 */
 @media screen and (max-width: 999px){
 html {
@@ -73,25 +78,62 @@ html {
   /* 모바일 헤더 */
   .header {
     display: flex;
-    flex-wrap: wrap;
-  }
-  .logo, .member, .search {
-    width: 100%;
+    flex-direction: column;
+    background: #38302e;
+    padding: 0 0 15px 0;
   }
   /* 모바일 로고 */
    .logo {
-    background:gray;
+    padding: 0 20px;
+    margin: 15px 0;
    }
   /* 모바일 멤버 링크 */
   .member {
-    background: tomato;
+    background: #988574;
     order: -1;
     display: flex;
     justify-content: flex-end;
+    padding: 2px 10px 2px 20px;
+  }
+  .member a {
+    white-space: nowrap;
+    display: block;
+    color:#fff;
+    padding: 8px 10px;
+    transition: all 0.4s;
+  }
+  .member a:hover, .member a:focus {
+    color: #38302e;
   }
   /*  모바일 검색폼 */
   .search {
-    background: green;
+    padding: 0 20px;
+  }
+  input[type="search"]{
+    width: calc(100% - 40px);
+    height: 30px;
+    border:1px solid #ccc;
+    border-radius: 5px;
+    padding-left: 1em;
+    margin-right: 5px;
+  }
+  .btn-search {
+    width: 30px;
+    height: 30px;
+    border: 0;
+    padding: 0;
+    background: transparent;
+    position: relative;     /* 포인트 */
+  }
+  .btn-search::before{
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background: url("images/btn_search.png") no-repeat 0 0 / 100% 100% scroll;
+    cursor: pointer;
   }
   /* 모바일 내비게이션 */
   .navigation {
@@ -132,8 +174,64 @@ html {
   }
   /* 데스크탑 헤더 */
   .header {
+      position: relative;
+      padding-bottom: 15px;
+  }
+  /* 데스크탑 로고  */
+ .logo {
+    width:calc((3 * 65 + 2 * 20) / 1000 * 100%);
+    height: 100%;
+    position: absolute;
 
-  } 
+ }
+ .logo a{
+   position: absolute;
+   width:204px;
+   height: 59px;
+   top: 0;
+   left: 0;
+   right: 0;
+   bottom: 0;
+   margin: auto;
+ }
+  /* 데스크탑 안내링크*/
+  .member {
+    text-align: right;
+    font-size: 0;
+    padding: 2px 0;
+    margin-right: -10px;
+  }
+  .member li {
+    display: inline-block;
+    font-size: 1.4rem;
+  }
+  .bar::before { 
+    content: "|";
+    margin: 0 1px;
+  }
+  .member a{
+    padding: 8px 9px;
+    display: inline-block;
+  }
+  /* 데스크탑 검색 */
+  .search {
+    text-align: right;
+  }
+  input[type="search"] {
+    width: 400px;
+    height: 35px;
+    border: 1px solid #aaa;
+    border-radius: 5px;
+    padding-left: 1.2em;
+  }
+  .btn-search {
+    border: 1px solid #aaa;
+    border-radius: 5px;
+    background: #988574;
+    color:#fff;
+    padding: 0 15px;
+    height: 35px;
+  }
   /* 데스크탑 내비게이션 */
   .navigation {
     height:15vh;
