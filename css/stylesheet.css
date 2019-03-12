@@ -65,6 +65,44 @@ body {
   line-height:1.5;
   font-size: 1.4rem;
 }
+/* 메인 켄텐츠 섹션 제목 공통 */
+.main-heading {
+  font-family: "Noto Sans Bold";
+  font-size: 1.6rem;
+  height: 60px;
+  background: url("images/sprite_main.png") no-repeat;
+  padding-left: 65px;
+}
+.news-heading {
+  background-position: 0 -230px;
+}
+.board-heading {
+  background-position: 0 -115px;
+}
+.favorite-heading {
+  background-position: 0 -345px;
+}
+.twitter-heading {
+  background-position: 0 -460px;
+}
+.en-heading {
+  display: block;
+}
+.book-heading .en-heading {
+  color: #abd375;
+}
+.news-heading .en-heading {
+  color: #e8ca58;
+}
+.board-heading .en-heading {
+  color: #c7b39a;
+}
+.favorite-heading .en-heading {
+  color: #eea60a;
+}
+.twitter-heading .en-heading {
+  color: #6aaee6;
+}
 /* 모바일 스타일 */
 @media screen and (max-width: 999px){
 html {
@@ -209,9 +247,17 @@ html {
     margin: 10px 0 15px 10px;
   }
   /* 모바일 메인 컨텐츠 */
-  .main {
-    height: 60vh;
+  .main {    
   }
+  /* 모바일 메인 컨텐츠 제목 - 확인 필요 */
+  /* .main-heading {
+    height: 3em;
+    background-color: red;
+    background-size: 3em 3em;
+  } */
+  .book, .news, .board, .favorite, .twitter {
+    margin: 1em 0;
+  } 
   /* 모바일 슬로건 */
   .slogan {
     height: 10vh;
@@ -336,13 +382,16 @@ html {
   .btn-menubar{
     display: none;
    }
-  /* 데스크탑 메인 */
+  /* 데스크탑 메인 컨텐츠 */
   .main {
     height:40vh;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap; 
     justify-content: space-between;
+  } 
+  .book, .news, .board, .favorite, .twitter {
+    margin-top: 20px;
   } 
   /* 데스크탑 추천서적 */
   .book {
