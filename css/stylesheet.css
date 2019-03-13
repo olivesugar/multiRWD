@@ -84,6 +84,11 @@ body {
 [class$="-summary"] {
   line-height: 1.5;
 }
+[class*="-date"] {
+  display: block;
+  text-align: right;
+  margin-top: 15px;
+}
 /* 추천 서적 공통 */
 .book-cover {
   width: 70%;
@@ -107,17 +112,77 @@ body {
 .video-container {
   margin: 15px auto;
 }
-.video-date {
-  display: block;
-  text-align: right;
-  margin-top: 15px;
-
-}
 /* 게시판 공통 */
-
+.board {
+  position: relative;
+}
+.board-list {
+  margin-top: 15px;
+}
+.board-list li {
+  margin-top: 10px;
+  display: flex;
+  flex-wrap: wrap;
+}
+.board-list a {
+  width: calc(100% - 7em);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.board-list time {
+  white-space: nowrap;
+  margin-left: auto;
+}
+.more {
+  position: absolute;
+  top: 0;
+  right: -5px;
+  padding: 5px;
+}
+.more.icon-plus::before {
+  color: hsla(110, 50%, 50%, 1);
+}
 /* 인기 사이트 공통 */
-
+.favorite-list {
+  margin: 15px 0 0 10px;
+  overflow: hidden;
+  counter-reset: 0;
+}
+.favorite-list li {
+  margin-top: 10px;
+  counter-increment: number;
+  line-height: 1.5;
+}
+.favorite-list li::before {
+  content: counter(number);
+  background: #eea60a;
+  color: #fff;
+  padding: 1px 8px;
+  margin-right: 5px;
+  border-radius: 50%;
+}
 /* 트위터 공통 */
+.twitter-author {
+  margin-top: 15px;
+  position: relative;
+}
+.twitter-author-heading, 
+.twitter-summary {
+  padding-right: 25%;
+}
+.twitter-profile {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 20%;
+  border: 1px solid #000;
+  border-radius: 50%;
+  padding: 5px;
+}
+.twitter-summary {
+  margin-top: 15px;
+}
 
 /* 모바일 스타일 */
 @media screen and (max-width: 999px){
@@ -428,13 +493,14 @@ html {
   }
   /* 데스크탑 인기사이트 */
   .favorite {
-    /* width:405px; */
-    width:40.5%;
+    width:23.5%;
+    /* width:235px; */
+    order: 1;
   }
   /* 데스크탑 트위터 */
   .twitter {
-    /* width:235px; */
-    width:23.5%;
+    /* width:405px; */
+    width:40.5%;
   }
   /* 데스크탑  슬로건 */
   .slogan {
